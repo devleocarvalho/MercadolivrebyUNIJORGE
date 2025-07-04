@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadolivre VIA UNIJORGE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="app-title">Mercadolivre</h1>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#cadastro-consumidor" class="nav-link">Cadastro Consumidor</a></li>
+                    <li><a href="#cadastro-vendedor" class="nav-link">Cadastro Vendedor</a></li>
+                    <li><a href="#cadastro-produto" class="nav-link">Cadastro Produto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container main-content">
+        <section id="cadastro-consumidor" class="content-section">
+            <h2 class="section-title">Cadastro de Consumidor</h2>
+            <form id="form-consumidor" class="form-layout">
+                <div class="form-group">
+                    <label for="consumidor-nome">Nome Completo:</label>
+                    <input type="text" id="consumidor-nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="consumidor-cpf">CPF:</label>
+                    <input type="text" id="consumidor-cpf" name="cpf" required placeholder="000.000.000-00"  >
+                </div>
+                <div class="form-group">
+                    <label for="consumidor-endereco">Endereço:</label>
+                    <input type="text" id="consumidor-endereco" name="endereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="consumidor-telefone">Telefone:</label>
+                    <input type="tel" id="consumidor-telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX"  >
+                </div>
+                <div class="form-group">
+                    <label for="consumidor-email">E-mail:</label>
+                    <input type="email" id="consumidor-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="consumidor-senha">Senha:</label>
+                    <input type="password" id="consumidor-senha" name="senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar Consumidor</button>
+            </form>
+        </section>
+
+        <section id="cadastro-vendedor" class="content-section">
+            <h2 class="section-title">Cadastro de Vendedor</h2>
+            <form id="form-vendedor" class="form-layout">
+                <div class="form-group">
+                    <label for="vendedor-nome">Nome Completo:</label>
+                    <input type="text" id="vendedor-nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="vendedor-cpf">CPF:</label>
+                    <input type="text" id="vendedor-cpf" name="cpf" required placeholder="000.000.000-00"  >
+                </div>
+                <div class="form-group">
+                    <label for="vendedor-endereco">Endereço:</label>
+                    <input type="text" id="vendedor-endereco" name="endereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="vendedor-telefone">Telefone:</label>
+                    <input type="tel" id="vendedor-telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX"  >
+                </div>
+                <div class="form-group">
+                    <label for="vendedor-email">E-mail:</label>
+                    <input type="email" id="vendedor-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="vendedor-senha">Senha:</label>
+                    <input type="password" id="vendedor-senha" name="senha" required>
+                </div>
+                <h3 class="form-subtitle">Dados para Depósito</h3>
+                <div class="form-group">
+                    <label for="vendedor-banco">Banco:</label>
+                    <input type="text" id="vendedor-banco" name="banco" required>
+                </div>
+                <div class="form-group">
+                    <label for="vendedor-agencia">Agência:</label>
+                    <input type="text" id="vendedor-agencia" name="agencia" required>
+                </div>
+                <div class="form-group">
+                    <label for="vendedor-conta">Conta:</label>
+                    <input type="text" id="vendedor-conta" name="conta" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar Vendedor</button>
+            </form>
+        </section>
+        <section id="cadastro-produto" class="content-section">
+            <h2 class="section-title">Gerenciamento de Produtos</h2>
+            <form id="form-produto" class="form-layout form-section">
+                <h3 class="form-subtitle">Detalhes do Produto</h3>
+                <input type="hidden" id="produto-id">
+               <div class="form-group">
+                    <label for="foto">Produto:</label><br>
+                    <img id="foto" src="./R.png" alt="Imagem do produto" style="max-width: 200px; height: auto;">
+                    <p class="form-hint"></p>
+                </div>
+                <div class="form-group">
+                    <label for="produto-nome">Nome do Produto:</label>
+                    <input type="text" id="produto-nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="produto-descricao">Descrição:</label>
+                    <textarea id="produto-descricao" name="descricao" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="produto-preco">Preço:</label>
+                    <input type="number" id="produto-preco" name="preco" required step="0.01" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="produto-prazo-entrega">Prazo de Entrega (dias):</label>
+                    <input type="number" id="produto-prazo-entrega" name="prazoEntrega" required min="0">
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="produto-disponivel" name="disponivel">
+                    <label for="produto-disponivel">Disponível para venda</label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="btn-salvar-produto" class="btn btn-success">Salvar Produto</button>
+                    <button type="button" id="btn-cancelar-produto" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </form>
+            <h3 class="section-subtitle">Meus Produtos Cadastrados</h3>
+            <div class="table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Disponível</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-produtos">
+                     </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p> 2025  Mercadolivre . Todos os direitos reservados a @devleocarvalho.</p>
+    </footer>
+        <script src="script.js"></script>
+</body>
+</html>
